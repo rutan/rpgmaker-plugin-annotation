@@ -19,7 +19,10 @@
         "ja": "文字列パラメータ"
       },
       "description": "this is a string",
-      "default": "hello, world"
+      "default": {
+        "en": "hello, world",
+        "ja": "こんにちは、世界"
+      }
     },
     {
       "type": "string[]",
@@ -248,9 +251,19 @@
       },
       "description": "this is a struct parameter",
       "default": {
-        "structParam1": 10,
-        "structParam2": {
-          "structParam1": 20
+        "en": {
+          "structParam1": 10,
+          "structParam2": "This is a string!",
+          "structParam3": {
+            "structParam1": 20
+          }
+        },
+        "ja": {
+          "structParam1": 10,
+          "structParam2": "これは文字列だ！",
+          "structParam3": {
+            "structParam1": 20
+          }
         }
       }
     }
@@ -269,6 +282,16 @@
         {
           "name": "structParam2",
           "text": "MyStruct Parameter 2",
+          "description": "This is a string",
+          "type": "string",
+          "default": {
+            "en": "this is a string",
+            "ja": "これは文字列"
+          }
+        },
+        {
+          "name": "structParam3",
+          "text": "MyStruct Parameter 3",
           "description": "This is a struct",
           "type": "struct",
           "struct": "MyStructChild",
@@ -277,8 +300,8 @@
           }
         },
         {
-          "name": "structParam3",
-          "text": "MyStruct Parameter 3",
+          "name": "structParam4",
+          "text": "MyStruct Parameter 4",
           "description": "This is a struct array",
           "type": "struct[]",
           "struct": "MyStructChild",

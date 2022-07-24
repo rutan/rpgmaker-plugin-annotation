@@ -146,7 +146,7 @@ exports[`generateAnnotation snapshot 1`] = `
  * @type struct<MyStructParent>
  * @text Struct Parameter
  * @desc this is a struct parameter
- * @default {\\"structParam1\\":\\"10\\",\\"structParam2\\":\\"{\\\\\\"structParam1\\\\\\":\\\\\\"20\\\\\\"}\\"}
+ * @default {\\"structParam1\\":\\"10\\",\\"structParam2\\":\\"\\\\\\"This is a string!\\\\\\"\\",\\"structParam3\\":\\"{\\\\\\"structParam1\\\\\\":\\\\\\"20\\\\\\"}\\"}
  *
  * @command MyCommand
  * @text My Original Command
@@ -172,14 +172,20 @@ exports[`generateAnnotation snapshot 1`] = `
  * @default 12345
  *
  * @param structParam2
- * @type struct<MyStructChild>
+ * @type string
  * @text MyStruct Parameter 2
+ * @desc This is a string
+ * @default this is a string
+ *
+ * @param structParam3
+ * @type struct<MyStructChild>
+ * @text MyStruct Parameter 3
  * @desc This is a struct
  * @default {\\"structParam1\\":\\"20\\"}
  *
- * @param structParam3
+ * @param structParam4
  * @type struct<MyStructChild>[]
- * @text MyStruct Parameter 3
+ * @text MyStruct Parameter 4
  * @desc This is a struct array
  * @default [\\"{\\\\\\"structParam1\\\\\\":\\\\\\"1\\\\\\"}\\",\\"{\\\\\\"structParam1\\\\\\":\\\\\\"2\\\\\\"}\\",\\"{\\\\\\"structParam1\\\\\\":\\\\\\"3\\\\\\"}\\"]
  */
@@ -222,7 +228,7 @@ exports[`generateAnnotation snapshot 1`] = `
  * @type string
  * @text 文字列パラメータ
  * @desc this is a string
- * @default hello, world
+ * @default こんにちは、世界
  *
  * @param stringArrayParameter
  * @type string[]
@@ -339,7 +345,7 @@ exports[`generateAnnotation snapshot 1`] = `
  * @type struct<MyStructParent>
  * @text 構造体パラメータ
  * @desc this is a struct parameter
- * @default {\\"structParam1\\":\\"10\\",\\"structParam2\\":\\"{\\\\\\"structParam1\\\\\\":\\\\\\"20\\\\\\"}\\"}
+ * @default {\\"structParam1\\":\\"10\\",\\"structParam2\\":\\"\\\\\\"これは文字列だ！\\\\\\"\\",\\"structParam3\\":\\"{\\\\\\"structParam1\\\\\\":\\\\\\"20\\\\\\"}\\"}
  *
  * @command MyCommand
  * @text My Original Command
@@ -365,14 +371,20 @@ exports[`generateAnnotation snapshot 1`] = `
  * @default 12345
  *
  * @param structParam2
- * @type struct<MyStructChild>
+ * @type string
  * @text MyStruct Parameter 2
+ * @desc This is a string
+ * @default これは文字列
+ *
+ * @param structParam3
+ * @type struct<MyStructChild>
+ * @text MyStruct Parameter 3
  * @desc This is a struct
  * @default {\\"structParam1\\":\\"20\\"}
  *
- * @param structParam3
+ * @param structParam4
  * @type struct<MyStructChild>[]
- * @text MyStruct Parameter 3
+ * @text MyStruct Parameter 4
  * @desc This is a struct array
  * @default [\\"{\\\\\\"structParam1\\\\\\":\\\\\\"1\\\\\\"}\\",\\"{\\\\\\"structParam1\\\\\\":\\\\\\"2\\\\\\"}\\",\\"{\\\\\\"structParam1\\\\\\":\\\\\\"3\\\\\\"}\\"]
  */

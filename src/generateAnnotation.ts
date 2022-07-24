@@ -17,6 +17,12 @@ export function generateAnnotation(config: PluginConfigSchema, { languages, defa
         return '';
       }
 
+      function pickObject(value: { [key: string]: any }) {
+        if (Object.prototype.hasOwnProperty.call(value, language)) return value[language];
+        if (Object.prototype.hasOwnProperty.call(value, defaultLanguage)) return value[defaultLanguage];
+        return value;
+      }
+
       function push(lines: string[], annotation: string, stringValue: string) {
         stringValue.split(/\r?\n/).forEach((line, i) => {
           lines.push(`${i === 0 ? `@${annotation} ` : ''}${line}`);
@@ -141,10 +147,10 @@ export function generateAnnotation(config: PluginConfigSchema, { languages, defa
             push(lines, 'default', JSON.stringify(param.default));
             break;
           case 'struct':
-            push(lines, 'default', escapeStructParam(param.default));
+            push(lines, 'default', escapeStructParam(pickObject(param.default)));
             break;
           case 'struct[]':
-            push(lines, 'default', JSON.stringify(param.default.map((n) => escapeStructParam(n))));
+            push(lines, 'default', JSON.stringify(param.default.map((n) => escapeStructParam(pickObject(n)))));
             break;
           default: {
             const badParameter: never = param;
