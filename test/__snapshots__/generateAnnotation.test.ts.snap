@@ -1,0 +1,389 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateAnnotation snapshot 1`] = `
+"/*:
+ * @target MZ
+ * @plugindesc SamplePlugin
+ * @author Name
+ * @help This is a sample plugin.
+ * Good luck :)
+ * @url https://example.com
+ * @license Public domain
+ *
+ * @base ParentPlugin
+ * @base ParentPluginEx
+ * @orderAfter ChildPlugin
+ * @orderAfter ChildPluginEx
+ * @orderBefore ParentPlugin2
+ * @orderBefore ParentPlugin2Ex
+ *
+ * @requiredAssets img/pictures/image_1
+ * @requiredAssets img/system/image_2
+ *
+ * @noteParam name
+ * @noteDir img/pictures
+ * @noteType file
+ * @noteData actors
+ *
+ * @param stringParameter
+ * @type string
+ * @text String Parameter
+ * @desc this is a string
+ * @default hello, world
+ *
+ * @param stringArrayParameter
+ * @type string[]
+ * @text String Array Parameter
+ * @desc this is a string array
+ * @default [\\"hello\\",\\"world\\"]
+ *
+ * @param multilineStringParameter
+ * @type multiline_string
+ * @text MultilineString Parameter
+ * @desc this is a multiline string
+ * @default hello
+ * world
+ *
+ * @param multilineStringArrayParameter
+ * @type multiline_string[]
+ * @text MultilineString Array Parameter
+ * @desc this is a multiline string array
+ * @default [\\"hello\\\\nworld\\",\\"happy\\\\nworld\\"]
+ *
+ * @param noteParameter
+ * @type note
+ * @text Note Parameter
+ * @desc this is a note
+ * @default \\"<Hello:World>\\"
+ *
+ * @param noteArrayParameter
+ * @type note[]
+ * @text Note Array Parameter
+ * @desc this is a note array
+ * @default [\\"\\\\\\"<Hello:World>\\\\\\"\\",\\"\\\\\\"<Happy:World>\\\\\\"\\"]
+ *
+ * @param numberParameter
+ * @type number
+ * @text Number Parameter
+ * @desc this is a number
+ * @min 100
+ * @max 100000
+ * @decimals 0
+ * @default 12345
+ *
+ * @param numberParameter
+ * @type number[]
+ * @text Number Array Parameter
+ * @desc this is a number array
+ * @min -100
+ * @max 1000
+ * @decimals 2
+ * @default [123.45,456.67]
+ *
+ * @param booleanParameter
+ * @type boolean
+ * @text Boolean Parameter
+ * @desc this is a boolean
+ * @on ON
+ * @off OFF
+ * @default false
+ *
+ * @param booleanParameter
+ * @type boolean[]
+ * @text Boolean Array Parameter
+ * @desc this is a boolean array
+ * @on ON
+ * @off FALSE
+ * @default [false,true]
+ *
+ * @param fileParameter
+ * @type file
+ * @text File Parameter
+ * @desc this is a file
+ * @dir img/pictures
+ * @default Actor_01
+ *
+ * @param fileArrayParameter
+ * @type file[]
+ * @text File Array Parameter
+ * @desc this is a file array
+ * @dir img/pictures
+ * @default [\\"Actor_01\\",\\"Actor_02\\"]
+ *
+ * @param actorParameter
+ * @type actor
+ * @text Actor Parameter
+ * @desc this is a actor
+ * @default 1
+ *
+ * @param actorArrayParameter
+ * @type actor[]
+ * @text Actor Array Parameter
+ * @desc this is a actor array
+ * @default [1,2,3,4]
+ *
+ * @param selectParameter
+ * @type select
+ * @text Select Parameter
+ * @desc this is a select parameter
+ * @option Option 1
+ * @value A
+ * @option Option-2
+ * @value B
+ * @default A
+ *
+ * @param selectArrayParameter
+ * @type select[]
+ * @text Select Array Parameter
+ * @desc this is a select parameter array
+ * @option Option 1
+ * @value A
+ * @option Option-2
+ * @value B
+ * @default [\\"A\\",\\"B\\"]
+ *
+ * @param structParameter
+ * @type struct<MyStructParent>
+ * @text Struct Parameter
+ * @desc this is a struct parameter
+ * @default {\\"structParam1\\":\\"10\\",\\"structParam2\\":\\"{\\\\\\"structParam1\\\\\\":\\\\\\"20\\\\\\"}\\"}
+ *
+ * @command MyCommand
+ * @text My Original Command
+ * @desc This is a super command.
+ * This command is very useful.
+ *
+ * @arg commandParam1
+ * @type boolean
+ * @text Command Parameter 1
+ * @desc This is a boolean
+ * @on TRUE
+ * @off FALSE
+ * @default false
+ */
+
+/*~struct~MyStructParent:
+ *
+ * @param structParam1
+ * @type number
+ * @text MyStruct Parameter 1
+ * @desc This is a number
+ * @decimals 0
+ * @default 12345
+ *
+ * @param structParam2
+ * @type struct<MyStructChild>
+ * @text MyStruct Parameter 2
+ * @desc This is a struct
+ * @default {\\"structParam1\\":\\"20\\"}
+ *
+ * @param structParam3
+ * @type struct<MyStructChild>[]
+ * @text MyStruct Parameter 3
+ * @desc This is a struct array
+ * @default [\\"{\\\\\\"structParam1\\\\\\":\\\\\\"1\\\\\\"}\\",\\"{\\\\\\"structParam1\\\\\\":\\\\\\"2\\\\\\"}\\",\\"{\\\\\\"structParam1\\\\\\":\\\\\\"3\\\\\\"}\\"]
+ */
+
+/*~struct~MyStructChild:
+ *
+ * @param structParam1
+ * @type number
+ * @text MyStruct Parameter 1
+ * @desc This is a number
+ * @decimals 0
+ * @default 12345
+ */
+
+/*:ja
+ * @target MZ
+ * @plugindesc サンプルプラグイン
+ * @author Name
+ * @help This is a sample plugin.
+ * Good luck :)
+ * @url https://example.com
+ * @license Public domain
+ *
+ * @base ParentPlugin
+ * @base ParentPluginEx
+ * @orderAfter ChildPlugin
+ * @orderAfter ChildPluginEx
+ * @orderBefore ParentPlugin2
+ * @orderBefore ParentPlugin2Ex
+ *
+ * @requiredAssets img/pictures/image_1
+ * @requiredAssets img/system/image_2
+ *
+ * @noteParam name
+ * @noteDir img/pictures
+ * @noteType file
+ * @noteData actors
+ *
+ * @param stringParameter
+ * @type string
+ * @text 文字列パラメータ
+ * @desc this is a string
+ * @default hello, world
+ *
+ * @param stringArrayParameter
+ * @type string[]
+ * @text 文字列配列パラメータ
+ * @desc this is a string array
+ * @default [\\"hello\\",\\"world\\"]
+ *
+ * @param multilineStringParameter
+ * @type multiline_string
+ * @text 複数行文字列パラメータ
+ * @desc this is a multiline string
+ * @default hello
+ * world
+ *
+ * @param multilineStringArrayParameter
+ * @type multiline_string[]
+ * @text 複数行文字列配列パラメータ
+ * @desc this is a multiline string array
+ * @default [\\"hello\\\\nworld\\",\\"happy\\\\nworld\\"]
+ *
+ * @param noteParameter
+ * @type note
+ * @text メモ欄パラメータ
+ * @desc this is a note
+ * @default \\"<Hello:World>\\"
+ *
+ * @param noteArrayParameter
+ * @type note[]
+ * @text メモ欄配列パラメータ
+ * @desc this is a note array
+ * @default [\\"\\\\\\"<Hello:World>\\\\\\"\\",\\"\\\\\\"<Happy:World>\\\\\\"\\"]
+ *
+ * @param numberParameter
+ * @type number
+ * @text 数値パラメータ
+ * @desc this is a number
+ * @min 100
+ * @max 100000
+ * @decimals 0
+ * @default 12345
+ *
+ * @param numberParameter
+ * @type number[]
+ * @text 数値配列パラメータ
+ * @desc this is a number array
+ * @min -100
+ * @max 1000
+ * @decimals 2
+ * @default [123.45,456.67]
+ *
+ * @param booleanParameter
+ * @type boolean
+ * @text 真偽値パラメータ
+ * @desc this is a boolean
+ * @on オン
+ * @off オフ
+ * @default false
+ *
+ * @param booleanParameter
+ * @type boolean[]
+ * @text 真偽値配列パラメータ
+ * @desc this is a boolean array
+ * @on ON
+ * @off FALSE
+ * @default [false,true]
+ *
+ * @param fileParameter
+ * @type file
+ * @text ファイルパラメータ
+ * @desc this is a file
+ * @dir img/pictures
+ * @default Actor_01
+ *
+ * @param fileArrayParameter
+ * @type file[]
+ * @text ファイル配列パラメータ
+ * @desc this is a file array
+ * @dir img/pictures
+ * @default [\\"Actor_01\\",\\"Actor_02\\"]
+ *
+ * @param actorParameter
+ * @type actor
+ * @text アクターパラメータ
+ * @desc this is a actor
+ * @default 1
+ *
+ * @param actorArrayParameter
+ * @type actor[]
+ * @text アクター配列パラメータ
+ * @desc this is a actor array
+ * @default [1,2,3,4]
+ *
+ * @param selectParameter
+ * @type select
+ * @text セレクトパラメータ
+ * @desc this is a select parameter
+ * @option オプション1
+ * @value A
+ * @option Option-2
+ * @value B
+ * @default A
+ *
+ * @param selectArrayParameter
+ * @type select[]
+ * @text セレクト配列パラメータ
+ * @desc this is a select parameter array
+ * @option オプション1
+ * @value A
+ * @option Option-2
+ * @value B
+ * @default [\\"A\\",\\"B\\"]
+ *
+ * @param structParameter
+ * @type struct<MyStructParent>
+ * @text 構造体パラメータ
+ * @desc this is a struct parameter
+ * @default {\\"structParam1\\":\\"10\\",\\"structParam2\\":\\"{\\\\\\"structParam1\\\\\\":\\\\\\"20\\\\\\"}\\"}
+ *
+ * @command MyCommand
+ * @text My Original Command
+ * @desc This is a super command.
+ * This command is very useful.
+ *
+ * @arg commandParam1
+ * @type boolean
+ * @text Command Parameter 1
+ * @desc This is a boolean
+ * @on TRUE
+ * @off FALSE
+ * @default false
+ */
+
+/*~struct~MyStructParent:ja
+ *
+ * @param structParam1
+ * @type number
+ * @text MyStruct Parameter 1
+ * @desc This is a number
+ * @decimals 0
+ * @default 12345
+ *
+ * @param structParam2
+ * @type struct<MyStructChild>
+ * @text MyStruct Parameter 2
+ * @desc This is a struct
+ * @default {\\"structParam1\\":\\"20\\"}
+ *
+ * @param structParam3
+ * @type struct<MyStructChild>[]
+ * @text MyStruct Parameter 3
+ * @desc This is a struct array
+ * @default [\\"{\\\\\\"structParam1\\\\\\":\\\\\\"1\\\\\\"}\\",\\"{\\\\\\"structParam1\\\\\\":\\\\\\"2\\\\\\"}\\",\\"{\\\\\\"structParam1\\\\\\":\\\\\\"3\\\\\\"}\\"]
+ */
+
+/*~struct~MyStructChild:ja
+ *
+ * @param structParam1
+ * @type number
+ * @text MyStruct Parameter 1
+ * @desc This is a number
+ * @decimals 0
+ * @default 12345
+ */"
+`;
