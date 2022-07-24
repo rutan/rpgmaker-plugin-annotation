@@ -37,7 +37,8 @@
     "format:prettier": "prettier --write ./src",
     "update-snapshot": "jest --runInBand --updateSnapshot",
     "clean": "rimraf ./lib",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "prepare": "husky install"
   },
   "dependencies": {
     "commander": "^8.3.0",
