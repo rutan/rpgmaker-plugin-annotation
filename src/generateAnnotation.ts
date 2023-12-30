@@ -30,8 +30,8 @@ export function generateAnnotation(config: PluginConfigSchema, { languages, defa
       }
 
       function pushParameter(lines: string[], name: string, param: PluginParameter) {
-        if (param.parent) push(lines, 'parent', pickString(param.parent));
         push(lines, name, param.name);
+        if (param.parent) push(lines, 'parent', pickString(param.parent));
 
         // type
         switch (param.type) {
