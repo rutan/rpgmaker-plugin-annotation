@@ -232,6 +232,7 @@ export const pluginConfigSchema = z.object({
   author: stringOrI18nString,
   help: stringOrI18nString.optional(),
   url: stringOrI18nString.optional(),
+  version: stringOrI18nString.optional(),
   license: stringOrI18nString.optional(),
   params: z.array(pluginParameter).default([]),
   structs: z.array(pluginStruct).default([]),

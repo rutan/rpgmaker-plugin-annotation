@@ -6,6 +6,7 @@
     "en": "SamplePlugin",
     "ja": "サンプルプラグイン"
   },
+  "version": "1.2.3",
   "author": "Name",
   "help": "This is a sample plugin.\nGood luck :)",
   "url": "https://example.com",
@@ -23,6 +24,16 @@
         "en": "hello, world",
         "ja": "こんにちは、世界"
       }
+    },
+    {
+      "type": "string",
+      "name": "stringParameterWithEmptyDefault",
+      "text": {
+        "en": "String Parameter with Empty Default Value",
+        "ja": "文字列パラメータ（デフォルト値空欄）"
+      },
+      "description": "this is a string",
+      "default": ""
     },
     {
       "type": "string[]",
@@ -94,7 +105,7 @@
       "min": 100,
       "max": 100000,
       "decimals": 0,
-      "default": 12345
+      "default": 0
     },
     {
       "type": "number[]",
@@ -138,7 +149,7 @@
         "ja": "真偽値配列パラメータ"
       },
       "description": "this is a boolean array",
-      "on": "ON",
+      "on": "TRUE",
       "off": "FALSE",
       "default": [
         false,

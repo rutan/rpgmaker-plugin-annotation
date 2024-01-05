@@ -31,7 +31,10 @@ export function generateAnnotation(config: PluginConfigSchema, { languages, defa
 
       function pushParameter(lines: string[], name: string, param: PluginParameter) {
         push(lines, name, param.name);
+
         if (param.parent) push(lines, 'parent', pickString(param.parent));
+        if (param.text) push(lines, 'text', pickString(param.text));
+        if (param.description) push(lines, 'desc', pickString(param.description));
 
         // type
         switch (param.type) {
@@ -49,21 +52,20 @@ export function generateAnnotation(config: PluginConfigSchema, { languages, defa
             }
         }
 
-        if (param.text) push(lines, 'text', pickString(param.text));
-        if (param.description) push(lines, 'desc', pickString(param.description));
-
         switch (param.type) {
           case 'string':
-            push(lines, 'default', pickString(param.default));
+            if (param.default) push(lines, 'default', pickString(param.default));
             break;
           case 'string[]':
             push(lines, 'default', JSON.stringify(param.default.map((n) => pickString(n))));
             break;
           case 'multiline_string':
-            if (config.target.includes('MV')) {
-              push(lines, 'default', JSON.stringify(pickString(param.default)));
-            } else {
-              push(lines, 'default', pickString(param.default));
+            if (param.default) {
+              if (config.target.includes('MV')) {
+                push(lines, 'default', JSON.stringify(pickString(param.default)));
+              } else {
+                push(lines, 'default', pickString(param.default));
+              }
             }
             break;
           case 'multiline_string[]':
@@ -74,16 +76,16 @@ export function generateAnnotation(config: PluginConfigSchema, { languages, defa
             }
             break;
           case 'note':
-            push(lines, 'default', JSON.stringify(pickString(param.default)));
+            if (param.default) push(lines, 'default', JSON.stringify(pickString(param.default)));
             break;
           case 'note[]':
             push(lines, 'default', JSON.stringify(param.default.map((n) => JSON.stringify(pickString(n)))));
             break;
           case 'number':
           case 'number[]':
-            if (param.min) push(lines, 'min', param.min.toString());
-            if (param.max) push(lines, 'max', param.max.toString());
-            push(lines, 'decimals', param.decimals.toString());
+            if (param.min !== undefined) push(lines, 'min', param.min.toString());
+            if (param.max !== undefined) push(lines, 'max', param.max.toString());
+            if (param.decimals > 0) push(lines, 'decimals', param.decimals.toString());
             push(lines, 'default', JSON.stringify(param.default));
             break;
           case 'boolean':
@@ -95,8 +97,11 @@ export function generateAnnotation(config: PluginConfigSchema, { languages, defa
           case 'file':
           case 'file[]':
             push(lines, 'dir', param.dir);
-            if (param.type === 'file') push(lines, 'default', param.default);
-            else push(lines, 'default', JSON.stringify(param.default));
+            if (param.type === 'file') {
+              if (param.default) push(lines, 'default', param.default);
+            } else {
+              push(lines, 'default', JSON.stringify(param.default));
+            }
             if (config.target.includes('MV')) push(lines, 'require', '1');
             break;
           case 'select':
@@ -172,16 +177,20 @@ export function generateAnnotation(config: PluginConfigSchema, { languages, defa
         // base
         config.target.forEach((target) => push(lines, 'target', target));
         push(lines, 'plugindesc', pickString(config.title));
+        if (config.version) push(lines, 'version', pickString(config.version));
         push(lines, 'author', pickString(config.author));
-        if (config.help) push(lines, 'help', pickString(config.help));
-        if (config.url) push(lines, 'url', pickString(config.url));
         if (config.license) push(lines, 'license', pickString(config.license));
+        if (config.url) push(lines, 'url', pickString(config.url));
         endSection(lines);
 
-        // dependency
+        // dependencies
         config.base?.forEach((base) => push(lines, 'base', base));
         config.orderAfter?.forEach((orderAfter) => push(lines, 'orderAfter', orderAfter));
         config.orderBefore?.forEach((orderBefore) => push(lines, 'orderBefore', orderBefore));
+        endSection(lines);
+
+        // description
+        if (config.help) push(lines, 'help', pickString(config.help));
         endSection(lines);
 
         // assets
@@ -222,7 +231,7 @@ export function generateAnnotation(config: PluginConfigSchema, { languages, defa
       function generateStruct() {
         return config.structs
           .map((struct) => {
-            const lines: string[] = [''];
+            const lines: string[] = [];
 
             struct.params.forEach((param) => {
               pushParameter(lines, 'param', param);
